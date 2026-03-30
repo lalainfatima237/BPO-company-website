@@ -1,0 +1,145 @@
+Create a **modern, professional, clean, and fully hostable business website** for a BPO and tech solutions company named **"Tech Twist"**.
+
+The website must be:
+
+* Light-themed (avoid dark themes)
+* Text highly readable
+* Professional and corporate look
+* Fully responsive (desktop, tablet, mobile)
+* Include the **company logo** in the header
+
+---
+
+## 🎨 **Design & UI Guidelines**
+
+* Soft, clean colors: white, light blue, gray
+* Modern typography, clear readability
+* Minimalistic layout with professional spacing
+* Smooth scrolling and subtle hover animations
+* Use **high-quality images** of office and working environment
+
+---
+
+## 🏢 **Website Sections & Content**
+
+### 1️⃣ Home Section
+
+* Headline: **"Empowering Businesses with Smart BPO & Tech Solutions"**
+* Subtext: Brief intro about Tech Twist and its services
+* CTA buttons: **"Get Started" / "Contact Us"**
+* Hero image: Call center or office environment
+
+---
+
+### 2️⃣ About Us
+
+* Introduce Tech Twist as a **BPO + Tech Solutions Company**
+* Key highlights:
+
+  * Professional & skilled team
+  * Excellent working environment
+  * Client satisfaction & trust
+* Include **office and work environment images**
+
+---
+
+### 3️⃣ Services Section
+
+Display services in **grid/cards with icons and descriptions**:
+
+#### 📞 Call Center Services
+
+* Inbound Call Center
+* Outbound Call Center
+
+#### 📊 Business Services
+
+* Tax Dispatch
+* Order Taking & Booking
+
+#### 💻 Technology Solutions / POS
+
+* POS (Point of Sale Systems)
+
+  * POS for Grocery
+  * POS for Restaurant
+  * POS for Pharmacy
+* Manufacturing Development & Hardware Integration
+* Barcode Solutions
+* Biometric Attendance Systems
+
+---
+
+### 4️⃣ Why Choose Us
+
+* Professional & experienced team
+* Reliable, fast, and scalable solutions
+* High customer satisfaction
+* Modern technology stack (Python-ready backend)
+
+---
+
+### 5️⃣ Clients / Testimonials
+
+* Display logos of current/sample clients
+* 3–5 client reviews with **names, positions, feedback**
+* Build credibility and trust
+
+---
+
+### 6️⃣ Contact Us
+
+* Contact form: Name, Email, Message
+* Company phone, email, address
+* Embedded Google Maps
+* CTA: **"Let’s Work Together"**
+
+---
+
+## 🧠 **Technical Requirements**
+
+* Python-ready backend (Django or FastAPI)
+* Clean API integration support
+* SEO optimized
+* Fast loading & scalable
+* Secure code structure
+
+---
+
+## 🖼️ **Media & Visual Notes**
+
+* Professional images for:
+
+  * Call center operations
+  * Office/work environment
+  * POS systems & hardware
+* Service-specific icons
+* Consistent spacing & alignment
+
+---
+
+## 🎯 **Goal**
+
+The website should:
+
+* Represent a **modern, professional BPO & IT solutions company**
+* Showcase services, client credibility, and working environment
+* Encourage users to contact or engage
+
+
+
+💡 **Extra Tips for AI Generation:**
+
+* If output is too heavy → *“Make it more minimalistic and clean”*
+* If output lacks trust → *“Add more client logos, reviews, and testimonial cards”*
+* Ensure responsive layout for all devices
+
+---
+
+
+create project in back end python and front end in react 
+https://5zh6ylqvlb77m.ok.kimi.link/ 
+this the website we make before we are prety much satisfied with desighn and only thing we need that website was dark so we cannot read text
+se add social media links of company at the bottom of the landing page 
+ you can make ready to use chat bot that can answer basic questions to the visitor 
+whats app button link

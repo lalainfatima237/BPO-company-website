@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Tech Twist - BPO & Tech Solutions"
+version = "1.0.0"
+id = "artifacts/tech-twist"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18533
+
+[services.development]
+run = "pnpm --filter @workspace/tech-twist run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tech-twist", "run", "build" ]
+publicDir = "artifacts/tech-twist/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18533"
+BASE_PATH = "/"

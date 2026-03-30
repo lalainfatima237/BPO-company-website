@@ -1,0 +1,18 @@
+packages:
+  "framer-motion": "For premium page transitions, scroll-triggered reveals, and micro-interactions"
+  "react-hook-form": "For robust contact form state management"
+  "@hookform/resolvers": "For Zod validation integration with react-hook-form"
+  "clsx": "For conditional class merging"
+  "tailwind-merge": "For reliable Tailwind class conflict resolution"
+
+images:
+  - path: "artifacts/tech-twist/public/images/logo.png"
+    description: "Minimal modern corporate logo for 'Tech Twist' featuring a dynamic blue abstract geometric twist or knot symbol, clean white background, high resolution, suitable for a tech and BPO company."
+    aspect_ratio: "4:3"
+  - path: "artifacts/tech-twist/public/images/pattern-bg.png"
+    description: "Subtle abstract light blue and white gradient mesh background with soft geometric tech elements and glowing data nodes, very light and professional"
+    aspect_ratio: "16:9"
+
+notes:
+  - The API hook `useSubmitContact` is imported directly from `@workspace/api-client-react` as specified.
+  - Using a single-page scrolling architecture.
