@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, Bot, User } from "lucide-react";
+import { MessageSquare, X, Send, Bot, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -68,7 +68,7 @@ export function Chatbot() {
       
       setIsTyping(false);
       setMessages(prev => [...prev, botMsg]);
-    }, 1000);
+    }, 1500);
   };
 
   return (
@@ -77,7 +77,7 @@ export function Chatbot() {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 z-50 p-4 bg-primary text-white rounded-full shadow-2xl hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300",
+          "fixed bottom-6 right-6 z-50 p-4 bg-primary text-white rounded-full shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-300",
           isOpen ? "scale-0 opacity-0 pointer-events-none" : "scale-100 opacity-100"
         )}
       >
@@ -87,30 +87,37 @@ export function Chatbot() {
       {/* Chat Window */}
       <div
         className={cn(
-          "fixed bottom-6 right-6 z-50 w-[350px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-white rounded-2xl shadow-2xl border border-border flex flex-col transition-all duration-300 origin-bottom-right",
-          isOpen ? "scale-100 opacity-100" : "scale-50 opacity-0 pointer-events-none"
+          "fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-6rem)] bg-white rounded-3xl shadow-2xl border border-border/50 flex flex-col transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] origin-bottom-right overflow-hidden",
+          isOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-10 opacity-0 scale-95 pointer-events-none"
         )}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between p-4 bg-primary text-primary-foreground rounded-t-2xl">
-          <div className="flex items-center gap-2">
-            <Bot size={20} />
-            <span className="font-semibold">Tech Twist Support</span>
+        {/* Header - Glassmorphism */}
+        <div className="flex items-center justify-between p-5 bg-primary/95 backdrop-blur text-white shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+              <Bot size={22} />
+            </div>
+            <div>
+              <h3 className="font-bold text-base">Tech Twist Support</h3>
+              <p className="text-xs text-white/80 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span> Online
+              </p>
+            </div>
           </div>
-          <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-1 rounded-md transition-colors">
-            <X size={20} />
+          <button onClick={() => setIsOpen(false)} className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+            <Minimize2 size={16} />
           </button>
         </div>
 
         {/* Messages Area */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50">
+        <div className="flex-1 overflow-y-auto p-5 space-y-6 bg-slate-50">
           {messages.map((msg) => (
             <div key={msg.id} className={cn("flex", msg.isBot ? "justify-start" : "justify-end")}>
               <div className={cn(
-                "max-w-[80%] p-3 rounded-2xl text-sm",
+                "max-w-[85%] p-4 text-[15px] leading-relaxed shadow-sm",
                 msg.isBot 
-                  ? "bg-white border border-border text-foreground rounded-tl-sm" 
-                  : "bg-primary text-primary-foreground rounded-tr-sm"
+                  ? "bg-white border border-border/50 text-foreground rounded-2xl rounded-tl-sm" 
+                  : "bg-gradient-to-br from-primary to-blue-500 text-white rounded-2xl rounded-tr-sm"
               )}>
                 {msg.text}
               </div>
@@ -119,10 +126,10 @@ export function Chatbot() {
           
           {isTyping && (
             <div className="flex justify-start">
-              <div className="bg-white border border-border p-4 rounded-2xl rounded-tl-sm flex gap-1 items-center h-[42px]">
-                <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce"></div>
+              <div className="bg-white border border-border/50 px-5 py-4 rounded-2xl rounded-tl-sm flex gap-1.5 items-center shadow-sm">
+                <div className="w-2 h-2 bg-primary/60 rounded-full typing-dot"></div>
+                <div className="w-2 h-2 bg-primary/60 rounded-full typing-dot"></div>
+                <div className="w-2 h-2 bg-primary/60 rounded-full typing-dot"></div>
               </div>
             </div>
           )}
@@ -130,17 +137,17 @@ export function Chatbot() {
         </div>
 
         {/* Input Area */}
-        <div className="p-4 bg-white border-t border-border rounded-b-2xl flex gap-2">
+        <div className="p-4 bg-white border-t border-border/50 flex gap-3">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="Type your message..."
-            className="flex-1 bg-secondary border-none rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="flex-1 bg-secondary/50 border-none rounded-2xl px-5 py-3.5 text-[15px] focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-secondary/80 transition-colors"
           />
-          <Button onClick={handleSend} size="icon" className="rounded-xl shrink-0 h-10 w-10">
-            <Send size={18} />
+          <Button onClick={handleSend} size="icon" className="rounded-2xl shrink-0 h-[52px] w-[52px] shadow-md shadow-primary/20">
+            <Send size={20} className="ml-1" />
           </Button>
         </div>
       </div>

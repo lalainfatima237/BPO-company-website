@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Chatbot } from "@/components/widgets/Chatbot";
@@ -21,7 +22,7 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans relative">
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-indigo-400 to-blue-300 z-[60] origin-left"
         style={{ scaleX }}
       />
       
@@ -31,6 +32,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
+        <WhyChooseUsSection />
         <TestimonialsSection />
         <ContactSection />
       </main>

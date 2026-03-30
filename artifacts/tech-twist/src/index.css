@@ -35,23 +35,24 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
 }
 
 :root {
-  /* Soft, clean, light corporate palette */
-  --background: 210 40% 98%;      /* Very light cool gray/blue */
-  --foreground: 222 47% 11%;      /* Very dark blue/slate */
+  /* Sophisticated light theme */
+  --background: 210 40% 98%;      
+  --foreground: 222 47% 11%;      
   
-  --card: 0 0% 100%;              /* Pure white */
+  --card: 0 0% 100%;              
   --card-foreground: 222 47% 11%;
   
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
   
-  --primary: 221 83% 53%;         /* Modern Soft Blue #1d4ed8 / #2563eb vibe */
+  --primary: 221 83% 53%;         
   --primary-foreground: 210 40% 98%;
   
-  --secondary: 214 32% 91%;       /* Light Slate */
+  --secondary: 214 32% 91%;       
   --secondary-foreground: 222 47% 11%;
   
   --muted: 214 32% 91%;
@@ -85,34 +86,108 @@
 
 @layer utilities {
   .glass-nav {
-    @apply bg-white/80 backdrop-blur-md border-b border-border/50 shadow-sm;
+    @apply bg-white/70 backdrop-blur-lg border-b border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.03)];
+  }
+  
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-xl;
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-indigo-400;
+  }
+  
+  .bg-gradient-mesh {
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(221,83%,53%,0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(355,100%,93%,0.1) 0px, transparent 50%);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)];
+  }
+  
+  .shadow-elegant {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.03);
   }
 }
 
-/* Custom scrollbar for a polished feel */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--muted-foreground) / 0.3);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.5);
 }
 
-/* Animation classes */
-@keyframes chatBounce {
+/* Animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.btn-shine {
+  background: linear-gradient(to right, hsl(var(--primary)) 20%, #60a5fa 40%, #60a5fa 60%, hsl(var(--primary)) 80%);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes typing {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-4px); }
 }
-.animate-chat-bounce {
-  animation: chatBounce 1s infinite ease-in-out;
+
+.typing-dot {
+  animation: typing 1.4s infinite ease-in-out;
 }
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }

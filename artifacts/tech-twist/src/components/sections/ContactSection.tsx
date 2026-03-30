@@ -47,123 +47,128 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-primary font-semibold uppercase tracking-wider text-sm">Get In Touch</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-foreground">Ready to Transform Your Business?</h3>
-          <p className="text-muted-foreground text-lg">Contact us today to discuss how our solutions can fit your needs.</p>
+    <section id="contact" className="py-32 bg-secondary/10 relative overflow-hidden">
+      {/* Subtle background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-b from-white to-transparent transform -skew-x-12 translate-x-1/4"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+          <h2 className="text-primary font-bold uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2">
+            Get In Touch
+          </h2>
+          <h3 className="text-5xl md:text-6xl font-extrabold text-foreground leading-[1.1]">
+            Ready to Transform <br/> Your Business?
+          </h3>
+          <p className="text-muted-foreground text-xl font-medium">Let's discuss how our tailored solutions can accelerate your growth.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           
-          {/* Contact Info & Map */}
+          {/* Contact Info */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="lg:col-span-5 space-y-8"
           >
-            <div className="bg-secondary/50 p-8 rounded-3xl space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-white text-primary rounded-xl shadow-sm"><Phone /></div>
-                <div>
-                  <h4 className="font-bold text-lg">Call Us</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  <p className="text-sm text-primary mt-1">Available 24/7</p>
+            <div className="space-y-6">
+              <div className="bg-white p-8 rounded-3xl shadow-elegant border border-border/50 hover:-translate-y-1 transition-transform">
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-primary/10 text-primary rounded-2xl"><Phone size={28} /></div>
+                  <div>
+                    <h4 className="font-extrabold text-xl mb-1">Call Us</h4>
+                    <p className="text-muted-foreground text-lg">+1 (555) 123-4567</p>
+                    <p className="text-sm font-bold text-primary mt-2 uppercase tracking-wider">Available 24/7</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-white text-primary rounded-xl shadow-sm"><Mail /></div>
-                <div>
-                  <h4 className="font-bold text-lg">Email Us</h4>
-                  <p className="text-muted-foreground">info@techtwist.com</p>
+              
+              <div className="bg-white p-8 rounded-3xl shadow-elegant border border-border/50 hover:-translate-y-1 transition-transform">
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-primary/10 text-primary rounded-2xl"><Mail size={28} /></div>
+                  <div>
+                    <h4 className="font-extrabold text-xl mb-1">Email Us</h4>
+                    <p className="text-muted-foreground text-lg">info@techtwist.com</p>
+                    <p className="text-sm font-bold text-primary mt-2 uppercase tracking-wider">Fast Response</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-white text-primary rounded-xl shadow-sm"><MapPin /></div>
-                <div>
-                  <h4 className="font-bold text-lg">Visit Us</h4>
-                  <p className="text-muted-foreground">123 Business Ave,<br/>Tech City, TX 75001</p>
+              
+              <div className="bg-white p-8 rounded-3xl shadow-elegant border border-border/50 hover:-translate-y-1 transition-transform">
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-primary/10 text-primary rounded-2xl"><MapPin size={28} /></div>
+                  <div>
+                    <h4 className="font-extrabold text-xl mb-1">Visit Us</h4>
+                    <p className="text-muted-foreground text-lg leading-relaxed">123 Business Ave,<br/>Tech City, TX 75001</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Simple Map Placeholder (Iframe) */}
-            <div className="w-full h-64 bg-gray-200 rounded-3xl overflow-hidden shadow-inner">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x864c21b227e1b101%3A0x6b4f74d9e03d526!2sTexas%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Tech Twist Location"
-              ></iframe>
             </div>
           </motion.div>
 
           {/* Form */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="lg:col-span-7"
           >
-            <div className="bg-white p-8 rounded-3xl shadow-2xl border border-border">
-              <h4 className="text-2xl font-bold mb-6">Send us a Message</h4>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <div className="bg-white p-10 md:p-12 rounded-[2.5rem] shadow-2xl border border-border/50 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full"></div>
+              
+              <h4 className="text-3xl font-extrabold mb-8 relative z-10">Send a Message</h4>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative z-10">
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Full Name</label>
+                  <label className="text-sm font-bold text-foreground">Full Name</label>
                   <Input 
                     placeholder="John Doe" 
                     {...form.register("name")} 
-                    className={form.formState.errors.name ? "border-destructive focus-visible:ring-destructive/10" : ""}
+                    className={`h-14 bg-secondary/50 border-transparent focus:bg-white transition-colors rounded-2xl px-5 text-lg ${form.formState.errors.name ? "border-destructive focus-visible:ring-destructive/20" : ""}`}
                   />
-                  {form.formState.errors.name && <p className="text-destructive text-sm">{form.formState.errors.name.message}</p>}
+                  {form.formState.errors.name && <p className="text-destructive text-sm font-medium">{form.formState.errors.name.message}</p>}
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Email Address</label>
+                    <label className="text-sm font-bold text-foreground">Email Address</label>
                     <Input 
                       placeholder="john@example.com" 
                       type="email"
                       {...form.register("email")} 
-                      className={form.formState.errors.email ? "border-destructive focus-visible:ring-destructive/10" : ""}
+                      className={`h-14 bg-secondary/50 border-transparent focus:bg-white transition-colors rounded-2xl px-5 text-lg ${form.formState.errors.email ? "border-destructive focus-visible:ring-destructive/20" : ""}`}
                     />
-                    {form.formState.errors.email && <p className="text-destructive text-sm">{form.formState.errors.email.message}</p>}
+                    {form.formState.errors.email && <p className="text-destructive text-sm font-medium">{form.formState.errors.email.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Phone Number (Optional)</label>
+                    <label className="text-sm font-bold text-foreground">Phone Number</label>
                     <Input 
                       placeholder="+1 (555) 000-0000" 
                       {...form.register("phone")} 
+                      className="h-14 bg-secondary/50 border-transparent focus:bg-white transition-colors rounded-2xl px-5 text-lg"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">How can we help?</label>
+                  <label className="text-sm font-bold text-foreground">How can we help?</label>
                   <Textarea 
                     placeholder="Tell us about your project or service needs..." 
                     {...form.register("message")} 
-                    className={form.formState.errors.message ? "border-destructive focus-visible:ring-destructive/10" : ""}
+                    className={`min-h-[160px] bg-secondary/50 border-transparent focus:bg-white transition-colors rounded-2xl p-5 text-lg resize-none ${form.formState.errors.message ? "border-destructive focus-visible:ring-destructive/20" : ""}`}
                   />
-                  {form.formState.errors.message && <p className="text-destructive text-sm">{form.formState.errors.message.message}</p>}
+                  {form.formState.errors.message && <p className="text-destructive text-sm font-medium">{form.formState.errors.message.message}</p>}
                 </div>
 
                 <Button 
                   type="submit" 
-                  variant="gradient" 
-                  className="w-full h-14 text-lg" 
+                  className="w-full h-16 text-lg font-bold rounded-2xl btn-shine text-white shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1" 
                   disabled={isPending}
                 >
                   {isPending ? (
-                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Sending...</>
+                    <><Loader2 className="mr-2 h-6 w-6 animate-spin" /> Sending Message...</>
                   ) : (
-                    <><Send className="mr-2 h-5 w-5" /> Send Message</>
+                    <><Send className="mr-2 h-6 w-6" /> Send Message</>
                   )}
                 </Button>
               </form>
