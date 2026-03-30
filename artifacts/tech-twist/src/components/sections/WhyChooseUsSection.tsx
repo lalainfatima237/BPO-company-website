@@ -13,7 +13,7 @@ export function WhyChooseUsSection() {
   return (
     <section id="why-us" className="py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -49,22 +49,40 @@ export function WhyChooseUsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid sm:grid-cols-2 gap-6"
+            className="relative h-full min-h-[400px]"
           >
-            {features.map((feature, idx) => (
-              <Card key={idx} className={`border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-3xl ${idx % 2 !== 0 ? 'sm:mt-12' : ''}`}>
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-indigo-500 text-white flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
-                    <feature.icon size={26} strokeWidth={2} />
-                  </div>
-                  <h4 className="text-xl font-bold mb-3">{feature.title}</h4>
-                  <p className="text-muted-foreground font-medium text-sm leading-relaxed">{feature.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white z-10">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
+                alt="Happy Team" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
           </motion.div>
 
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {features.map((feature, idx) => (
+            <Card key={idx} className="border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-3xl">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-indigo-500 text-white flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
+                  <feature.icon size={26} strokeWidth={2} />
+                </div>
+                <h4 className="text-xl font-bold mb-3">{feature.title}</h4>
+                <p className="text-muted-foreground font-medium text-sm leading-relaxed">{feature.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

@@ -7,22 +7,22 @@ const services = [
   {
     category: "Call Center",
     items: [
-      { icon: Headset, title: "Inbound Support", desc: "24/7 customer support, query resolution, and technical helpdesk services ensuring high customer satisfaction." },
-      { icon: PhoneOutgoing, title: "Outbound Sales", desc: "Lead generation, telemarketing, and survey campaigns driven by targeted strategies." }
+      { icon: Headset, title: "Inbound Support", desc: "24/7 customer support, query resolution, and technical helpdesk services ensuring high customer satisfaction.", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop" },
+      { icon: PhoneOutgoing, title: "Outbound Sales", desc: "Lead generation, telemarketing, and survey campaigns driven by targeted strategies.", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=600&auto=format&fit=crop" }
     ]
   },
   {
     category: "Business Ops",
     items: [
-      { icon: Truck, title: "Tax & Dispatch", desc: "Logistics coordination, route optimization, and reliable dispatch management." },
-      { icon: ClipboardList, title: "Order Taking", desc: "Seamless handling of reservations, appointments, and e-commerce order processing." }
+      { icon: Truck, title: "Tax & Dispatch", desc: "Logistics coordination, route optimization, and reliable dispatch management.", image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?q=80&w=600&auto=format&fit=crop" },
+      { icon: ClipboardList, title: "Order Taking", desc: "Seamless handling of reservations, appointments, and e-commerce order processing.", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" }
     ]
   },
   {
     category: "Technology",
     items: [
-      { icon: MonitorSmartphone, title: "POS Solutions", desc: "Custom Point of Sale systems for Grocery, Restaurant, and Pharmacy businesses." },
-      { icon: Cpu, title: "Hardware Integration", desc: "Manufacturing development, barcode solutions, and secure biometric attendance systems." }
+      { icon: MonitorSmartphone, title: "POS Solutions", desc: "Custom Point of Sale systems for Grocery, Restaurant, and Pharmacy businesses.", image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=600&auto=format&fit=crop" },
+      { icon: Cpu, title: "Hardware Integration", desc: "Manufacturing development, barcode solutions, and secure biometric attendance systems.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" }
     ]
   }
 ];
@@ -56,25 +56,36 @@ export function ServicesSection() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <Card className="h-full border border-border/50 shadow-sm hover-lift bg-white relative overflow-hidden group rounded-3xl">
+                <Card className="h-full border border-border/50 shadow-sm hover-lift bg-white relative overflow-hidden group rounded-3xl flex flex-col">
                   {/* Top gradient line on hover */}
-                  <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary to-indigo-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                  <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary to-indigo-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20"></div>
                   
-                  <CardContent className="p-8">
+                  {/* Inline Image */}
+                  <div className="w-full h-48 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <img 
+                      src={srv.image} 
+                      alt={srv.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
+                  
+                  <CardContent className="p-8 flex-1 flex flex-col">
                     {/* Badge */}
-                    <div className="mb-8">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-secondary text-secondary-foreground">
+                    <div className="mb-6 -mt-12 relative z-20">
+                      <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-white text-primary shadow-md border border-gray-100">
                         {category.category}
                       </span>
                     </div>
                     
-                    <div className="flex items-start gap-5">
-                      <div className="p-4 bg-primary/5 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                        <srv.icon size={32} strokeWidth={1.5} />
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-primary/5 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <srv.icon size={28} strokeWidth={1.5} />
                       </div>
-                      <div className="space-y-3">
+                      <div className="space-y-3 pt-1">
                         <h4 className="text-2xl font-bold text-foreground">{srv.title}</h4>
-                        <p className="text-muted-foreground font-medium leading-relaxed">
+                        <p className="text-muted-foreground font-medium leading-relaxed text-sm">
                           {srv.desc}
                         </p>
                       </div>

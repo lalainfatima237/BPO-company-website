@@ -48,8 +48,16 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-32 bg-secondary/10 relative overflow-hidden">
-      {/* Subtle background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-b from-white to-transparent transform -skew-x-12 translate-x-1/4"></div>
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=2000&auto=format&fit=crop" 
+          alt="Contact Support Team" 
+          className="w-full h-full object-cover opacity-10"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background z-10"></div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">

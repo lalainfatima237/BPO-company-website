@@ -40,12 +40,13 @@ export function AboutSection() {
             transition={{ duration: 0.7 }}
             className="relative order-2 lg:order-1"
           >
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] md:aspect-[4/5] lg:aspect-[4/5]">
               <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
               <img 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
                 alt="Tech Twist Modern Office" 
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
@@ -58,8 +59,18 @@ export function AboutSection() {
               </div>
             </div>
             
+            {/* Overlapping smaller image */}
+            <div className="absolute -bottom-10 -right-10 hidden md:block w-64 h-64 rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-30 animate-float" style={{ animationDelay: '1s' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" 
+                alt="Team Collaboration" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            
             {/* Floating accent card */}
-            <div className="absolute -top-8 -right-8 hidden md:block bg-white p-6 rounded-3xl shadow-elegant border border-white/40 z-30 animate-float">
+            <div className="absolute -top-8 -left-8 hidden md:block bg-white p-6 rounded-3xl shadow-elegant border border-white/40 z-30 animate-float">
               <div className="flex items-center gap-4">
                 <div className="p-4 bg-gradient-to-br from-primary to-blue-400 text-white rounded-2xl shadow-lg">
                   <TrendingUp size={28} />

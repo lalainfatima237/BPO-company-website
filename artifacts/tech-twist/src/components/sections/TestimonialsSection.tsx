@@ -8,21 +8,24 @@ const testimonials = [
     role: "Operations Director, RetailFast",
     text: "Tech Twist transformed our customer support. Their inbound team reduced our wait times by 60%, and the integration with our systems was flawless.",
     rating: 5,
-    initials: "SJ"
+    initials: "SJ",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "David Chen",
     role: "Owner, Spice Route Restaurant",
     text: "The custom POS solution they built for us completely revolutionized how we handle orders. Incredibly intuitive and reliable hardware.",
     rating: 5,
-    initials: "DC"
+    initials: "DC",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "Marcus Thorne",
     role: "CEO, LogicLogistics",
     text: "Relying on Tech Twist for our dispatch services was the best decision we made this year. Professional, accurate, and always available.",
     rating: 5,
-    initials: "MT"
+    initials: "MT",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop"
   }
 ];
 
@@ -65,10 +68,16 @@ export function TestimonialsSection() {
                     ))}
                   </div>
                   <p className="text-xl leading-relaxed mb-10 flex-1 font-medium text-slate-300">"{test.text}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-indigo-500 flex items-center justify-center text-lg font-bold shadow-lg">
-                      {test.initials}
-                    </div>
+                  <div className="flex items-center gap-4 mt-auto">
+                    {test.image ? (
+                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary shadow-lg">
+                        <img src={test.image} alt={test.name} className="w-full h-full object-cover" loading="lazy" />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-indigo-500 flex items-center justify-center text-lg font-bold shadow-lg">
+                        {test.initials}
+                      </div>
+                    )}
                     <div>
                       <p className="font-bold text-xl">{test.name}</p>
                       <p className="text-primary font-medium">{test.role}</p>

@@ -16,12 +16,13 @@ export function HeroSection() {
         <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-10 max-w-5xl mx-auto"
+          className="space-y-10"
         >
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -80,14 +81,14 @@ export function HeroSection() {
             transition={{ delay: 0.8, duration: 1 }}
             className="pt-16 pb-4"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 max-w-4xl mx-auto border-t border-border/50 pt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 max-w-4xl border-t border-border/50 pt-8">
               {[
                 { label: "Active Clients", value: "500+" },
                 { label: "Years Experience", value: "10+" },
                 { label: "Satisfaction", value: "99%" },
                 { label: "Support", value: "24/7" }
               ].map((stat, i) => (
-                <div key={i} className="flex flex-col items-center">
+                <div key={i} className="flex flex-col items-start sm:items-center">
                   <div className="text-3xl md:text-4xl font-extrabold text-foreground mb-1">{stat.value}</div>
                   <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">{stat.label}</div>
                 </div>
@@ -95,6 +96,38 @@ export function HeroSection() {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Right side image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative hidden lg:block mt-10 lg:mt-0"
+        >
+          <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/3] group border-4 border-white">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" 
+              alt="Modern Call Center" 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            {/* Floating badge */}
+            <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl z-20 animate-float border border-white/50">
+              <div className="flex items-center gap-4">
+                <div className="bg-green-100 p-3 rounded-full text-green-600">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">Performance Driven</div>
+                  <div className="text-sm text-gray-600">Accelerating business growth</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        </div>
       </div>
 
       {/* Floating Elements Animation */}
