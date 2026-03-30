@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "6R-c2_YvXgMvQ3DSkpUym"
+uri = "file://code/tech-twist-code.tar.gz"
+type = "unspecified"
+title = "Tech Twist - Source Code"
