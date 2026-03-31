@@ -51,7 +51,7 @@ export function AboutSection() {
               {/* Main image */}
               <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                  src={`${import.meta.env.BASE_URL}images/service-callcenter.jpg`}
                   alt="Tech Twist Modern Office"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -82,7 +82,7 @@ export function AboutSection() {
               {/* Floating secondary image */}
               <div className="absolute -bottom-8 -right-8 hidden md:block w-56 h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20 animate-float" style={{ animationDelay: '1.5s' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                  src={`${import.meta.env.BASE_URL}images/service-cctv.jpg`}
                   alt="Team Collaboration"
                   className="w-full h-full object-cover"
                   loading="lazy"

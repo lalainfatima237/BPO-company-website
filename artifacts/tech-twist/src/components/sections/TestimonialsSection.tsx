@@ -31,7 +31,14 @@ const testimonials = [
   }
 ];
 
-const clients = ["NovaTech", "GlobalReach", "PrimeRetail", "FoodSync", "MedSupply", "DataCore"];
+const clients = [
+  { name: "Real Estate Group", image: "client-realestate.jpg" },
+  { name: "ISP Solutions", image: "client-isp.jpg" },
+  { name: "Gulf Enterprises", image: "client-gulf.jpg" },
+  { name: "NovaTech", image: null },
+  { name: "FoodSync", image: null },
+  { name: "MedSupply", image: null },
+];
 
 export function TestimonialsSection() {
   return (
@@ -106,16 +113,26 @@ export function TestimonialsSection() {
           className="border-t border-white/10 pt-16"
         >
           <p className="text-center text-slate-500 text-xs font-bold uppercase tracking-widest mb-10">Empowering Industry Innovators</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {clients.map((client) => (
               <div
-                key={client}
-                className="flex items-center gap-2.5 opacity-40 hover:opacity-80 transition-opacity duration-300 cursor-default"
+                key={client.name}
+                className="flex items-center gap-3 opacity-50 hover:opacity-90 transition-all duration-300 cursor-default group"
               >
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-indigo-400/60" />
-                </div>
-                <span className="text-white font-bold text-lg font-display">{client}</span>
+                {client.image ? (
+                  <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/10 group-hover:border-indigo-400/40 transition-colors flex-shrink-0">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/${client.image}`}
+                      alt={client.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-3 h-3 rounded-full bg-indigo-400/60" />
+                  </div>
+                )}
+                <span className="text-white font-bold text-base font-display">{client.name}</span>
               </div>
             ))}
           </div>

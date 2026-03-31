@@ -16,19 +16,27 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden hero-bg">
+      {/* Real hero background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={`${import.meta.env.BASE_URL}images/hero-bg.jpg`}
+          alt=""
+          className="w-full h-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(10,15,40,0.92) 0%, rgba(13,20,64,0.88) 50%, rgba(15,26,92,0.92) 100%)' }} />
+      </div>
+
       {/* Animated grid pattern */}
-      <div className="absolute inset-0 animate-grid" style={{
-        backgroundImage: `linear-gradient(rgba(99,102,241,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.1) 1px, transparent 1px)`,
+      <div className="absolute inset-0 animate-grid z-[1]" style={{
+        backgroundImage: `linear-gradient(rgba(99,102,241,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.08) 1px, transparent 1px)`,
         backgroundSize: '60px 60px'
       }} />
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-20 animate-blob"
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-20 animate-blob z-[1]"
         style={{ background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-15 animate-blob animation-delay-2000"
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-15 animate-blob animation-delay-2000 z-[1]"
         style={{ background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10"
-        style={{ background: 'radial-gradient(circle, #818cf8 0%, transparent 60%)' }} />
 
       {/* Floating ring decoration */}
       <div className="absolute top-20 right-16 w-64 h-64 rounded-full border border-white/5 animate-spin-slow" />
