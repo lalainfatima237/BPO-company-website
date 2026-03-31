@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sarah Jenkins",
-    role: "Operations Director, RetailFast",
+    role: "Operations Director",
+    company: "RetailFast",
     text: "Tech Twist transformed our customer support. Their inbound team reduced our wait times by 60%, and the integration with our systems was flawless.",
     rating: 5,
     initials: "SJ",
@@ -13,7 +13,8 @@ const testimonials = [
   },
   {
     name: "David Chen",
-    role: "Owner, Spice Route Restaurant",
+    role: "Owner",
+    company: "Spice Route Restaurant",
     text: "The custom POS solution they built for us completely revolutionized how we handle orders. Incredibly intuitive and reliable hardware.",
     rating: 5,
     initials: "DC",
@@ -21,7 +22,8 @@ const testimonials = [
   },
   {
     name: "Marcus Thorne",
-    role: "CEO, LogicLogistics",
+    role: "CEO",
+    company: "LogicLogistics",
     text: "Relying on Tech Twist for our dispatch services was the best decision we made this year. Professional, accurate, and always available.",
     rating: 5,
     initials: "MT",
@@ -29,26 +31,34 @@ const testimonials = [
   }
 ];
 
-const clients = ["NovaTech", "GlobalReach", "PrimeRetail", "FoodSync", "MedSupply"];
+const clients = ["NovaTech", "GlobalReach", "PrimeRetail", "FoodSync", "MedSupply", "DataCore"];
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-32 bg-slate-900 text-white overflow-hidden relative">
-      {/* Decorative background pattern */}
-      <div className="absolute inset-0 opacity-10" 
-           style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '48px 48px' }} 
+    <section id="testimonials" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0f28 0%, #0d1440 50%, #0f1a5c 100%)' }}>
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-8"
+        style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+          backgroundSize: '48px 48px'
+        }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950"></div>
-      
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-slate-950 to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20 space-y-6">
-          <h2 className="text-primary font-bold uppercase tracking-widest text-sm inline-flex items-center justify-center gap-2">
+        {/* Header */}
+        <div className="text-center mb-20 space-y-5">
+          <div className="inline-flex items-center gap-2 text-indigo-400 font-bold uppercase tracking-widest text-xs">
+            <div className="w-8 h-0.5 bg-indigo-400 rounded" />
             Client Success Stories
-          </h2>
-          <h3 className="text-5xl md:text-6xl font-extrabold text-white">Trusted by Leaders</h3>
+            <div className="w-8 h-0.5 bg-indigo-400 rounded" />
+          </div>
+          <h3 className="text-5xl md:text-6xl font-black text-white">Trusted by Leaders</h3>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Don't take our word for it — here's what our partners say about working with Tech Twist.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+        {/* Testimonial Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-24">
           {testimonials.map((test, i) => (
             <motion.div
               key={i}
@@ -57,52 +67,59 @@ export function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
             >
-              <Card className="bg-slate-800/50 border-slate-700/50 text-white backdrop-blur-xl hover:bg-slate-800/80 transition-all duration-300 h-full rounded-3xl hover:-translate-y-2 relative shadow-2xl">
-                {/* Large decorative quote mark */}
-                <div className="absolute -top-4 right-6 text-7xl text-slate-700/50 font-serif leading-none font-black select-none">"</div>
-                
-                <CardContent className="p-10 flex flex-col h-full relative z-10">
-                  <div className="flex gap-1.5 mb-8">
-                    {[...Array(test.rating)].map((_, i) => (
-                      <Star key={i} className="fill-yellow-500 text-yellow-500" size={22} />
-                    ))}
+              <div className="group relative h-full bg-white/5 hover:bg-white/8 border border-white/10 hover:border-white/20 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col">
+                {/* Quote icon */}
+                <div className="absolute top-6 right-6 text-indigo-400/20">
+                  <Quote size={40} />
+                </div>
+
+                {/* Stars */}
+                <div className="flex gap-1 mb-6">
+                  {[...Array(test.rating)].map((_, j) => (
+                    <Star key={j} size={16} className="fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+
+                {/* Text */}
+                <p className="text-slate-300 leading-relaxed text-base mb-8 flex-1">"{test.text}"</p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 mt-auto">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-indigo-500/40 flex-shrink-0">
+                    <img src={test.image} alt={test.name} className="w-full h-full object-cover" loading="lazy" />
                   </div>
-                  <p className="text-xl leading-relaxed mb-10 flex-1 font-medium text-slate-300">"{test.text}"</p>
-                  <div className="flex items-center gap-4 mt-auto">
-                    {test.image ? (
-                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary shadow-lg">
-                        <img src={test.image} alt={test.name} className="w-full h-full object-cover" loading="lazy" />
-                      </div>
-                    ) : (
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-indigo-500 flex items-center justify-center text-lg font-bold shadow-lg">
-                        {test.initials}
-                      </div>
-                    )}
-                    <div>
-                      <p className="font-bold text-xl">{test.name}</p>
-                      <p className="text-primary font-medium">{test.role}</p>
-                    </div>
+                  <div>
+                    <p className="font-bold text-white text-sm">{test.name}</p>
+                    <p className="text-indigo-400 text-xs font-medium">{test.role}, {test.company}</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Client Logos Ribbon */}
-        <div className="border-t border-slate-800 pt-16 text-center">
-          <p className="text-slate-400 mb-10 font-bold uppercase tracking-widest text-sm">Empowering Industry Innovators</p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-            {clients.map((client, i) => (
-              <div key={client} className="text-2xl font-bold font-display opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-full bg-white/20"></div>
+        {/* Client Logos */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="border-t border-white/10 pt-16"
+        >
+          <p className="text-center text-slate-500 text-xs font-bold uppercase tracking-widest mb-10">Empowering Industry Innovators</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {clients.map((client) => (
+              <div
+                key={client}
+                className="flex items-center gap-2.5 opacity-40 hover:opacity-80 transition-opacity duration-300 cursor-default"
+              >
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full bg-indigo-400/60" />
                 </div>
-                {client}
+                <span className="text-white font-bold text-lg font-display">{client}</span>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

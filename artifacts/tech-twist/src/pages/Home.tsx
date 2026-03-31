@@ -22,8 +22,8 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans relative">
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-indigo-400 to-blue-300 z-[60] origin-left"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-0.5 z-[60] origin-left"
+        style={{ scaleX, background: 'linear-gradient(to right, #6366f1, #60a5fa, #a78bfa)' }}
       />
       
       <Navbar />
