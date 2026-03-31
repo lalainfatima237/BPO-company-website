@@ -131,8 +131,8 @@ export function WhyChooseUsSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
               <img
-                src={`${import.meta.env.BASE_URL}images/service-it.jpg`}
-                alt="Happy Team"
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop"
+                alt="Professional BPO Team"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
