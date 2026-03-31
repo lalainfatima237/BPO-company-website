@@ -63,10 +63,7 @@ export function Navbar() {
                 )}
               />
             </div>
-            <span className={cn(
-              "font-display font-black text-2xl tracking-tight hidden sm:block transition-colors",
-              isHeroSection && !isScrolled ? "text-white" : "text-foreground"
-            )}>
+            <span className="font-display font-black text-2xl tracking-tight hidden sm:block transition-colors text-[#f5f6f7]">
               Tech<span className="text-primary">Twist</span>
             </span>
           </div>
@@ -109,7 +106,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-
       <div className={cn(
         "md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-border/50 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden origin-top",
         isMobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
