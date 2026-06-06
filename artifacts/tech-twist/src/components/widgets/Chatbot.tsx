@@ -17,8 +17,27 @@ const RESPONSES: Record<string, string> = {
   about: "Tech Twist is a premier BPO and IT solutions company. We help businesses streamline operations with top-tier talent and cutting-edge tech.",
   pricing: "Our pricing depends on your specific requirements. Please fill out the contact form to get a custom quote!",
   hours: "Our call center operations run 24/7/365 to ensure your business never sleeps.",
-  location: "Our main office is located at 123 Business Ave, Tech City, TX 75001.",
-  default: "Thank you for reaching out! One of our human agents will get back to you shortly. Feel free to use the contact form for detailed inquiries."
+  location: "Our main office is located at Offic#312 Eden Tower Main Boulevard Gullberg 3 LHR .",
+  default: "Thank you for reaching out! One of our human agents will get back to you shortly. Feel free to use the contact form for detailed inquiries.",
+
+  appointment: "We'd love to discuss your project! Please leave your email in the contact form, and our team will schedule a discovery call within 2 business hours.",
+  
+  career: "Looking to join the Tech Twist team? Please send your CV to careers@techtwistglobal.com or check our LinkedIn page for open positions.",
+  
+  custom: "Absolutely! We specialize in custom solutions. Whether it's a specific Django backend or a unique React frontend, we can build it according to your needs.",
+  
+  process: "Our process is simple: Discovery -> Planning -> Development -> Quality Assurance -> Deployment. We keep you updated at every sprint!",
+  
+  techstack: "We work with modern technologies including Python (Django/FastAPI), React.js, Tailwind CSS, and various AI integrations to ensure high performance.",
+  
+  
+  security: "Data security is our top priority. We implement the CIA triad and industry-standard encryption to keep your business and customer data safe.",
+  
+  freelance: "We are open to collaborations and freelance contracts via Upwork or Fiverr for specific development tasks. Let us know what you're looking for!",
+  
+  urgent: "For urgent technical support, please call our 24/7 hotline at 042-34551791 immediately.",
+  
+  social: "Follow us on LinkedIn and Instagram to stay updated with our latest tech innovations and company news!"
 };
 
 export function Chatbot() {

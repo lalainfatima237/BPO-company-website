@@ -28,15 +28,35 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
-    }
-  };
+  // const scrollToSection = (href: string) => {
+  //   setIsMobileMenuOpen(false);
+  //   const element = document.querySelector(href);
+  //   if (element) {
+  //     const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80;
+  //     window.scrollTo({ top: offsetTop, behavior: "smooth" });
+  //   }
+  // };
+const scrollToSection = (href: string) => {
+  setIsMobileMenuOpen(false); // Mobile menu band karne ke liye
+  
+  const targetId = href.replace('#', '');
+  const element = document.getElementById(targetId);
 
+  if (element) {
+    // 80 is the height of your navbar. 
+    // Isko adjust karein agar navbar zyada bada ya chota lage.
+    const offset = 80; 
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+};
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out py-5",
@@ -55,12 +75,18 @@ export function Navbar() {
               isHeroSection && !isScrolled ? "bg-white/10" : "bg-primary/10"
             )}>
               <img
-                src={`${import.meta.env.BASE_URL}images/logo.png`}
+                src={`${import.meta.env.BASE_URL}images/Tech1.png`}
                 alt="Tech Twist Logo"
                 className={cn(
-                  "h-8 w-auto object-contain",
-                  isHeroSection && !isScrolled ? "brightness-0 invert" : "mix-blend-multiply"
+                  "h-10 w-auto object-contain transition-all",
+                  isHeroSection && !isScrolled ? "" : ""
                 )}
+                onError={(e) => {
+    const target = e.target as HTMLImageElement;
+    if (!target.src.includes('Tech1.png')) {
+      target.src = `${import.meta.env.BASE_URL}images/Tech1.png`;
+    }
+  }}
               />
             </div>
             <span className="font-display font-black text-2xl tracking-tight hidden sm:block transition-colors text-[#f5f6f7]">
@@ -120,12 +146,18 @@ export function Navbar() {
               {link.name}
             </button>
           ))}
-          <Button
+          {/* <Button
             className="w-full mt-4 py-6 rounded-xl font-bold btn-shine text-white"
             onClick={() => scrollToSection('#contact')}
           >
             <Zap className="mr-2 h-5 w-5" /> Get in Touch
-          </Button>
+          </Button> */}
+          <Button
+  className="rounded-xl px-6 py-5 font-bold shadow-lg btn-shine text-white border-0 text-sm"
+  onClick={() => scrollToSection('#contact')}
+>
+  <Zap className="mr-1.5 h-4 w-4" /> Get Started
+</Button>
         </div>
       </div>
     </nav>

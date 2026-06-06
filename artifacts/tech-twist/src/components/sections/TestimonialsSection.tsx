@@ -42,7 +42,7 @@ const clients = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0f28 0%, #0d1440 50%, #0f1a5c 100%)' }}>
+    <section id="testimonials" className="pt-10 pb-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0f28 0%, #0d1440 50%, #0f1a5c 100%)' }}>
       {/* Grid pattern */}
       <div className="absolute inset-0 opacity-8"
         style={{

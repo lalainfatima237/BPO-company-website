@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Headset, PhoneOutgoing, FileText, ClipboardList, ShoppingCart, Utensils, Pill, Factory, Barcode, Fingerprint, ArrowRight } from "lucide-react";
+import { Headset, PhoneOutgoing, FileText, ClipboardList, ShoppingCart, Utensils, Pill, Factory, Barcode, Fingerprint, ArrowRight,Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const serviceCategories = [
@@ -14,13 +14,13 @@ const serviceCategories = [
         icon: Headset,
         title: "Inbound Call Center",
         desc: "24/7 customer support, query resolution, and technical helpdesk services ensuring maximum satisfaction.",
-        image: "https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?w=700&q=80&fit=crop",
+        image: "images/service-callcenter.jpg",
       },
       {
         icon: PhoneOutgoing,
         title: "Outbound Call Center",
         desc: "Lead generation, telemarketing, follow-ups and survey campaigns with targeted outreach strategies.",
-        image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=80&fit=crop",
+        image: "images/slide-callcenter.jpg",
       },
     ],
   },
@@ -32,16 +32,16 @@ const serviceCategories = [
     borderColor: "border-violet-200",
     services: [
       {
-        icon: FileText,
-        title: "Tax Dispatch",
+        icon: Car,
+        title: "Taxi Dispatch Services",
         desc: "Accurate tax management, filing, compliance reporting and financial dispatch services for businesses.",
-        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80&fit=crop",
+        image: "images/taxi.jpg",
       },
       {
         icon: ClipboardList,
         title: "Order Taking & Booking",
         desc: "Seamless handling of reservations, appointments, and e-commerce order processing around the clock.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80&fit=crop",
+        image: "images/service-pos.jpg",
       },
     ],
   },
@@ -56,37 +56,37 @@ const serviceCategories = [
         icon: ShoppingCart,
         title: "POS for Grocery",
         desc: "Fast, reliable point-of-sale systems with inventory management, barcode scanning and billing.",
-        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=700&q=80&fit=crop",
+        image: "images/slide-pos-grocery.jpg",
       },
       {
         icon: Utensils,
         title: "POS for Restaurant",
         desc: "Complete restaurant billing, table management, kitchen order display and menu management system.",
-        image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&fit=crop",
+        image: "images/slide-pos-restaurant.jpg",
       },
       {
         icon: Pill,
         title: "POS for Pharmacy",
         desc: "Pharmacy management with medicine inventory, expiry tracking, prescriptions and sales reporting.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80&fit=crop",
+        image: "images/slide-pos-pharmacy.jpg",
       },
       {
         icon: Factory,
         title: "PABX & Hardware Integration",
         desc: "Custom PABX systems and seamless hardware device integration with automation solutions.",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&fit=crop",
+        image: "images/slide-pabx.jpg",
       },
       {
         icon: Barcode,
         title: "Barcode Solutions",
         desc: "End-to-end barcode generation, scanning systems and label printing for inventory and retail.",
-        image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=700&q=80&fit=crop",
+        image: "images/slide-barcode.jpg",
       },
       {
         icon: Fingerprint,
         title: "Biometric Attendance",
         desc: "Secure fingerprint and face recognition attendance tracking systems for offices and factories.",
-        image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80&fit=crop",
+        image: "images/slide-biometric.jpg",
       },
     ],
   },
@@ -98,7 +98,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%)' }}>
+    <section id="services" className="pt-5 pb-20 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%)' }}>
       {/* Background grid */}
       <div className="absolute inset-0 opacity-40"
         style={{

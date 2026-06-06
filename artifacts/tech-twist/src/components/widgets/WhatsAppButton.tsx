@@ -2,15 +2,20 @@ import { MessageCircle } from "lucide-react";
 
 export function WhatsAppButton() {
   return (
-    <div className="fixed bottom-24 right-6 z-40 md:bottom-6 md:left-6 md:right-auto group">
+    <div className="fixed bottom-24 right-6 z-40 md:bottom-28 md:right-6  group">
       <div className="absolute inset-0 bg-[#25D366] rounded-full animate-pulse-ring opacity-50 z-0"></div>
       <a
-        href="https://wa.me/15551234567"
-        target="_blank"
-        rel="noopener noreferrer"
+       
+       
+    
+  href="https://wa.me/971585609493"
+  target="_blank"
+  rel="noopener noreferrer"
+
         className="relative z-10 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-[#25D366]/30 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
         aria-label="Chat on WhatsApp"
       >
+        
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 448"
@@ -21,9 +26,9 @@ export function WhatsAppButton() {
       </a>
       
       {/* Tooltip */}
-      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-4 px-3 py-2 bg-slate-900 text-white text-xs font-bold rounded-lg opacity-0 -translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap hidden md:block">
+      <div className="absolute right-full top-1/2 -translate-y-1/2 ml-4 px-3 py-2 bg-slate-900 text-white text-xs font-bold rounded-lg opacity-0 -translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap hidden md:block">
         Chat on WhatsApp
-        <div className="absolute top-1/2 -left-1 -translate-y-1/2 border-y-[6px] border-y-transparent border-r-[6px] border-r-slate-900"></div>
+        <div className="absolute top-1/2 -right-1 -translate-y-1/2 border-y-[6px] border-y-transparent border-r-[6px] border-r-slate-900"></div>
       </div>
     </div>
   );

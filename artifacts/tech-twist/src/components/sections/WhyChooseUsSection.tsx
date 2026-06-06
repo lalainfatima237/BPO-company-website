@@ -37,7 +37,7 @@ const bigStats = [
 
 export function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="py-32 bg-white relative overflow-hidden">
+    <section id="why-us" className="pt-5 pb-15 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-30"
         style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(99,102,241,0.06) 0%, transparent 50%)' }} />
 
@@ -131,7 +131,7 @@ export function WhyChooseUsSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop"
+                src="images/service-it.jpg"
                 alt="Professional BPO Team"
                 className="w-full h-full object-cover"
                 loading="lazy"
