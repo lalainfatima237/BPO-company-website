@@ -5,6 +5,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { PricingSection } from "@/components/sections/PricingSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Chatbot } from "@/components/widgets/Chatbot";
 import { WhatsAppButton } from "@/components/widgets/WhatsAppButton";
@@ -34,6 +35,7 @@ export default function Home() {
         <ServicesSection />
         <WhyChooseUsSection />
         <TestimonialsSection />
+        <PricingSection />
         <ContactSection />
       </main>
 

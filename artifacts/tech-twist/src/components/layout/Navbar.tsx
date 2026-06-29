@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
+  { name: "Packages", href: "#packages" },
   { name: "Why Us", href: "#why-us" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
@@ -89,9 +90,15 @@ const scrollToSection = (href: string) => {
   }}
               />
             </div>
-            <span className="font-display font-black text-2xl tracking-tight hidden sm:block transition-colors text-[#f5f6f7]">
-              Tech<span className="text-primary">Twist</span>
-            </span>
+            {isHeroSection && !isScrolled ? (
+              <span className="font-display font-black text-2xl tracking-tight hidden sm:block transition-colors text-[#f5f6f7]">
+                Tech<span className="text-primary">Twist</span>
+              </span>
+            ) : (
+              <span className="font-display font-black text-2xl tracking-tight hidden sm:block transition-all logo-gradient">
+                TechTwist
+              </span>
+            )}
           </div>
 
           <div className="hidden md:flex items-center gap-2">

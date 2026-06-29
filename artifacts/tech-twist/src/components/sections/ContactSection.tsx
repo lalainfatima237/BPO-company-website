@@ -205,6 +205,7 @@
 //   );
 // }
 
+import React from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -214,7 +215,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useSubmitContact } from "@workspace/api-client-react";
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import emailjs from "emailjs-com";
@@ -258,7 +258,7 @@ const contactInfo = [
 
 export function ContactSection() {
   const { toast } = useToast();
-  const { mutate, isPending } = useSubmitContact();
+  const [isPending, setIsPending] = React.useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -267,7 +267,9 @@ export function ContactSection() {
 
   const onSubmit = (data: FormValues) => {
     console.log("Form Data:", data);
+    setIsPending(true);
     setTimeout(() => {
+      setIsPending(false);
       toast({
         title: "Message Sent!",
         description: "Your message has been sent successfully.",

@@ -129,6 +129,13 @@
     background-clip: text;
   }
 
+  .logo-gradient {
+    background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .gradient-border {
     position: relative;
   }
