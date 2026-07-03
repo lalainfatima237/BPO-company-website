@@ -30,14 +30,14 @@ const features = [
 
 const bigStats = [
   { value: "98%", label: "Client Retention Rate", icon: Star },
-  { value: "15M+", label: "Interactions Handled", icon: TrendingUp },
-  { value: "500+", label: "Active Clients", icon: Globe },
+  { value: "1M+", label: "Interactions Handled", icon: TrendingUp },
+  { value: "5000+", label: "Customers Served", icon: Globe },
   { value: "24/7", label: "Dedicated Support", icon: Zap },
 ];
 
 export function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="pt-5 pb-15 bg-white relative overflow-hidden">
+    <section id="why-us" className="py-16 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-30"
         style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(99,102,241,0.06) 0%, transparent 50%)' }} />
 
@@ -57,11 +57,10 @@ export function WhyChooseUsSection() {
               <div className="w-8 h-0.5 bg-primary rounded" />
             </div>
             <h3 className="text-5xl md:text-6xl font-black text-foreground leading-tight">
-              Why Partner<br />
-              <span className="text-gradient-warm">With Us?</span>
+              Why Partner <span className="text-gradient-warm">With Us?</span>
             </h3>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              We go beyond standard service delivery — aligning our goals with yours, providing a dedicated infrastructure that feels like an in-house extension of your team.
+              We go beyond standard service delivery  aligning our goals with yours, providing a dedicated infrastructure that feels like an in-house extension of your team.
             </p>
           </motion.div>
         </div>
@@ -151,7 +150,7 @@ export function WhyChooseUsSection() {
                       <div className="flex gap-0.5">
                         {[1,2,3,4,5].map(s => <Star key={s} size={12} className="fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-white text-sm font-semibold mt-0.5">Loved by 500+ clients</p>
+                      <p className="text-white text-sm font-semibold mt-0.5">Loved by 5000+ Customers</p>
                     </div>
                   </div>
                 </div>

@@ -82,8 +82,7 @@ export function PricingSection() {
               <div className="w-8 h-0.5 bg-primary rounded" />
             </div>
             <h3 className="text-5xl md:text-6xl font-black text-foreground leading-tight">
-              Simple, Transparent<br />
-              <span className="text-gradient-warm">Pricing Plans</span>
+              Simple, Transparent <span className="text-gradient-warm">Pricing Plans</span>
             </h3>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Choose a plan that fits your business needs. Scale up as you grow.

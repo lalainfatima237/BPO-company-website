@@ -5,7 +5,7 @@ const highlights = [
   {
     icon: Users,
     title: "Professional Team",
-    stat: "200+",
+    stat: "100+",
     color: "from-blue-500 to-cyan-400",
     description: "Highly trained experts dedicated to delivering excellence in every interaction."
   },
@@ -18,8 +18,8 @@ const highlights = [
   },
   {
     icon: TrendingUp,
-    title: "Client Satisfaction",
-    stat: "99%",
+    title: "Customer Satisfaction",
+    stat: "99.2%",
     color: "from-emerald-500 to-teal-400",
     description: "A proven track record of boosting ROI and operational efficiency for partners."
   }
@@ -29,7 +29,7 @@ const perks = ['Customized IT Solutions', 'Global 24/7 Support Coverage', 'Data-
 
 export function AboutSection() {
   return (
-    <section id="about" className="pt-15 pb-30 bg-white relative overflow-hidden">
+    <section id="about" className="py-16 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       
       {/* Subtle background */}
@@ -73,7 +73,7 @@ export function AboutSection() {
                     <Award size={22} />
                   </div>
                   <div>
-                    <div className="text-2xl font-black text-foreground">10+</div>
+                    <div className="text-2xl font-black text-foreground">4+</div>
                     <div className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Years Excellence</div>
                   </div>
                 </div>
@@ -105,15 +105,14 @@ export function AboutSection() {
                 About Tech Twist
               </div>
               <h3 className="text-5xl md:text-6xl font-black text-foreground leading-[1.05]">
-                We Bridge the Gap<br />
-                Between{" "}
+                We Bridge the Gap Between{" "}
                 <span className="text-gradient-warm">People & Tech</span>
               </h3>
             </div>
 
             <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
               <p>
-                Tech Twist is not just another outsourcing firm — we are your strategic partner in growth. By combining human empathy with technological precision, we deliver seamless BPO operations and robust IT infrastructures.
+                Tech Twist is not just another outsourcing firm  we are your strategic partner in growth. By combining human empathy with technological precision, we deliver seamless BPO operations and robust IT infrastructures.
               </p>
               <p>
                 Whether you need to scale your customer support, implement custom POS systems, or integrate complex hardware, our dedicated teams integrate seamlessly with yours.
@@ -135,7 +134,7 @@ export function AboutSection() {
             <div className="flex flex-wrap gap-3 pt-4">
               {[
                 { icon: Shield, label: "ISO Certified Quality" },
-                { icon: Globe, label: "Serving 30+ Countries" },
+                { icon: Globe, label: "Serving 3+ Countries" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-xl text-sm font-semibold text-foreground">
                   <item.icon size={14} className="text-primary" />
@@ -147,7 +146,7 @@ export function AboutSection() {
         </div>
 
         {/* Highlights Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mt-28">
+        <div className="grid md:grid-cols-3 gap-6 mt-16">
           {highlights.map((item, index) => (
             <motion.div
               key={item.title}
